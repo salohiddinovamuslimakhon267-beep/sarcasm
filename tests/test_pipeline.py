@@ -109,6 +109,19 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(self.con.execute('SELECT human_verified,split FROM registry_status WHERE text_id=?',(text_id('Yangi instagram izohi'),)).fetchone(),(0,'quarantine'))
         self.assertTrue(all(validate(self.db).values()))
 
+    def test_annotation_batches_are_blind_and_disjoint_from_prior_labels(self):
+        from uzsarcasm.batches import create_batches
+        self.populated();self.finish()
+        report=create_batches(self.db,self.root/'batches')
+        a=pd.read_csv(self.root/'batches/annotation_A.csv',keep_default_na=False)
+        b=pd.read_csv(self.root/'batches/annotation_B.csv',keep_default_na=False)
+        self.assertEqual(list(a.text_id),list(b.text_id))
+        self.assertTrue(a.label.eq('').all())
+        self.assertNotIn('legacy_label',a.columns)
+        self.assertNotIn('split',a.columns)
+        self.assertEqual(len(a),a.text_id.nunique())
+        self.assertEqual(report['human_annotations_completed'],0)
+
     def test_build_original_excel_and_zip_end_to_end(self):
         import zipfile
         inp=self.root/'input';inp.mkdir()

@@ -142,6 +142,7 @@ def validate(db):
         JOIN registry_status r USING(text_id) WHERE o.resolved_platform='YouTube' AND o.video_id<>'' AND r.split LIKE 'provisional_%'
         GROUP BY o.video_id HAVING count(DISTINCT r.split)>1)''').fetchone()[0]==0,
       'no_unsubstantiated_gold':True,
+      'confirmed_negative_requires_human':con.execute('SELECT count(*) FROM registry_status WHERE confirmed_negative=1 AND human_verified<>1').fetchone()[0]==0,
       'legacy_no_duplicate_rows':con.execute('SELECT count(*)-count(DISTINCT text_id) FROM legacy_experiment').fetchone()[0]==0,
     }
     resolutions=con.execute("SELECT name FROM sqlite_master WHERE name='human_resolution'").fetchone()

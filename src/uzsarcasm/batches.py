@@ -36,6 +36,9 @@ def create_batches(db,output):
             reviewer_frame.to_excel(writer,index=False,sheet_name='Mustaqil_baholash')
             ws=writer.sheets['Mustaqil_baholash'];ws.freeze_panes='C2';ws.auto_filter.ref=ws.dimensions
             ws.column_dimensions['A'].width=32;ws.column_dimensions['B'].width=85
+            for row in ws.iter_rows():
+                for cell in row:
+                    if isinstance(cell.value,str): cell.data_type='s'
             for cell in ws['B'][1:]:cell.alignment=__import__('openpyxl').styles.Alignment(wrap_text=True,vertical='top')
     report={'priority_rows':len(priority),'total_unique_tasks':len(tasks),
       'split_counts':tasks.split.value_counts().to_dict(),'random_raw_added':len(tasks)-len(priority),
