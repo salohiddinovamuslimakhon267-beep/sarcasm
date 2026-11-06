@@ -1,0 +1,68 @@
+{
+  "warning": "Diagnostic against UNCONFIRMED legacy labels; not human gold or final model quality.",
+  "train_real": 618,
+  "train_synthetic": 10000,
+  "validation_real": 159,
+  "test_evaluated": false,
+  "seed": 42,
+  "tuning": "none",
+  "results": {
+    "majority": {
+      "n": 159,
+      "accuracy": 0.8113207547169812,
+      "sarcasm_precision": 0.0,
+      "sarcasm_recall": 0.0,
+      "sarcasm_f1": 0.0,
+      "macro_f1": 0.4479166666666667,
+      "tn_fp_fn_tp": [
+        129,
+        0,
+        30,
+        0
+      ]
+    },
+    "real_only": {
+      "n": 159,
+      "accuracy": 0.7358490566037735,
+      "sarcasm_precision": 0.125,
+      "sarcasm_recall": 0.06666666666666667,
+      "sarcasm_f1": 0.08695652173913043,
+      "macro_f1": 0.46627237851662406,
+      "tn_fp_fn_tp": [
+        115,
+        14,
+        28,
+        2
+      ]
+    },
+    "real_plus_synthetic": {
+      "n": 159,
+      "accuracy": 0.7547169811320755,
+      "sarcasm_precision": 0.15384615384615385,
+      "sarcasm_recall": 0.06666666666666667,
+      "sarcasm_f1": 0.09302325581395349,
+      "macro_f1": 0.4756025369978858,
+      "tn_fp_fn_tp": [
+        118,
+        11,
+        28,
+        2
+      ]
+    },
+    "real_plus_synthetic_equal_source_weight": {
+      "n": 159,
+      "accuracy": 0.779874213836478,
+      "sarcasm_precision": 0.2222222222222222,
+      "sarcasm_recall": 0.06666666666666667,
+      "sarcasm_f1": 0.10256410256410256,
+      "macro_f1": 0.4885580369451337,
+      "tn_fp_fn_tp": [
+        122,
+        7,
+        28,
+        2
+      ]
+    }
+  },
+  "protocol": "Frozen video groups; same real validation in all runs. Vectorizers fit only on train. TFIDF word1-2 + char3-5, balanced LR C1; no metadata/label-source features. Equal-source variant gives total synthetic sample weight equal to total real sample weight before class weighting."
+}

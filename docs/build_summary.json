@@ -1,0 +1,230 @@
+{
+  "normalization": "NFKC + casefold + apostrophe normalization + whitespace; emoji preserved; no transliteration",
+  "occurrences": 652132,
+  "unique_texts": 155455,
+  "label_rows": 62468,
+  "splits": {
+    "provisional_test": 33521,
+    "provisional_train": 75808,
+    "provisional_validation": 19528,
+    "quarantine": 16598,
+    "synthetic_train_only": 10000
+  },
+  "quarantine_reasons": {
+    "no_trustworthy_video_group": 3729,
+    "same_text_in_multiple_videos": 2537,
+    "text_quality_review": 10332
+  },
+  "legacy_experiment_split_labels": [
+    {
+      "split": "provisional_test",
+      "legacy_label": 0,
+      "n": 160
+    },
+    {
+      "split": "provisional_test",
+      "legacy_label": 1,
+      "n": 37
+    },
+    {
+      "split": "provisional_train",
+      "legacy_label": 0,
+      "n": 505
+    },
+    {
+      "split": "provisional_train",
+      "legacy_label": 1,
+      "n": 113
+    },
+    {
+      "split": "provisional_validation",
+      "legacy_label": 0,
+      "n": 129
+    },
+    {
+      "split": "provisional_validation",
+      "legacy_label": 1,
+      "n": 30
+    }
+  ],
+  "candidate_label_disagreements": 106,
+  "confirmed_negative": 0,
+  "human_verified": 0,
+  "gold_test_ready": false,
+  "context": {
+    "youtube_videos": 108,
+    "legacy_verified_unique_video": 974,
+    "legacy_verified_any_youtube_video": 976
+  },
+  "warnings": [
+    "All existing labels remain unconfirmed by independent humans.",
+    "Neutral legacy annotations are not mapped to binary negatives.",
+    "Instagram-named workbook is quarantined as an uncertain platform, not evidence of Instagram coverage.",
+    "Multi-video texts are quarantined across ALL roles, preventing cross-video duplicate leakage.",
+    "Parent comments are unavailable; no parent or title content is invented.",
+    "Exact normalization cannot guarantee removal of paraphrases or all near duplicates."
+  ],
+  "sources": [
+    {
+      "filename": "Kinoya va sarkazm_post.xlsx",
+      "member": "",
+      "sheet": "Лист1",
+      "rows": 37,
+      "role": "curated_unlabeled"
+    },
+    {
+      "filename": "Kinoya va sarkazm_post.xlsx",
+      "member": "",
+      "sheet": "Лист2",
+      "rows": 0,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Post_Cues.xlsx",
+      "member": "",
+      "sheet": "Post_Cues",
+      "rows": 793,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "synthetic_Sarcasm_10k (2).xlsx",
+      "member": "",
+      "sheet": "Sarkazm",
+      "rows": 10000,
+      "role": "synthetic"
+    },
+    {
+      "filename": "synthetic_Sarcasm_10k (2).xlsx",
+      "member": "",
+      "sheet": "Izoh",
+      "rows": 5,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Posts.xlsx",
+      "member": "",
+      "sheet": "Posts",
+      "rows": 1484,
+      "role": "posts"
+    },
+    {
+      "filename": "Cues.xlsx",
+      "member": "",
+      "sheet": "Cues",
+      "rows": 6,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Tokens.xlsx",
+      "member": "",
+      "sheet": "Tokens",
+      "rows": 26648,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Labeled Dataset",
+      "rows": 984,
+      "role": "legacy_verified"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Dataset Audit",
+      "rows": 18,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Feature Statistics",
+      "rows": 8,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Ablation Summary",
+      "rows": 13,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Model Comparison",
+      "rows": 5,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Significance Tests",
+      "rows": 13,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "RF Importance",
+      "rows": 8,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Length Sensitivity",
+      "rows": 4,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Uzbek_Sarcasm_Verified_Results.xlsx",
+      "member": "",
+      "sheet": "Method Notes",
+      "rows": 9,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Sarcasm_labeled_50k (2).xlsx",
+      "member": "",
+      "sheet": "Sarkazm",
+      "rows": 50000,
+      "role": "weak_50k"
+    },
+    {
+      "filename": "Sarcasm_labeled_50k (2).xlsx",
+      "member": "",
+      "sheet": "Izoh va sifat",
+      "rows": 8,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Annotations.xlsx",
+      "member": "",
+      "sheet": "Annotations",
+      "rows": 1484,
+      "role": "auxiliary"
+    },
+    {
+      "filename": "Comments.zip",
+      "member": "instagram_comments .xlsx",
+      "sheet": "Sheet1",
+      "rows": 237251,
+      "role": "raw"
+    },
+    {
+      "filename": "Comments.zip",
+      "member": "telegram_pubg_comments (7).xlsx",
+      "sheet": "Sheet",
+      "rows": 12027,
+      "role": "raw"
+    },
+    {
+      "filename": "Comments.zip",
+      "member": "youtube_comments.xlsx",
+      "sheet": "Sheet1",
+      "rows": 340578,
+      "role": "raw"
+    }
+  ]
+}
