@@ -1,0 +1,26 @@
+{
+  "Skrinshot_izohlari_v1_1.xlsx": {
+    "bytes": 28366,
+    "sha256": "9950a2348dab0e47ee3d608cd6888204f2d0ee0d51cd6a88f44349bae0e2a759"
+  },
+  "annotation_A.xlsx": {
+    "bytes": 338217,
+    "sha256": "559e9a618e233096e82671650591e4ee73cb151c13ce8f0bcb20d1e5398c3374"
+  },
+  "annotation_B.xlsx": {
+    "bytes": 338207,
+    "sha256": "1cb3037b7ef13e9bdeed485c2f4760b43e87130cb586836b11c235f9dee7832e"
+  },
+  "sarcasm_dataset_v1_1.zip": {
+    "bytes": 88944162,
+    "sha256": "9c698b34ee72c7b87b42baad5eacfc4f0fa88ccdf6de7be463b59ef9c5770b07"
+  },
+  "sarcasm_pipeline_code.zip": {
+    "bytes": 41864,
+    "sha256": "6cf05073a387b0924870cbb08738bc73ebd87279da982a258c82ce3a90aca06b"
+  },
+  "screenshot_second_review_blind.csv": {
+    "bytes": 32728,
+    "sha256": "3052adcffff7d609361babf6f725643e6c223f7ecefd4812f0d26b1b373f4e6b"
+  }
+}
