@@ -143,3 +143,37 @@ variant. Faqat matn TF-IDF word1–2/char3–5 + balanced Logistic Regression C=
 ishlatiladi. Manba, yorliq holati, emotsiya yoki domen model kirishiga kiritilmaydi.
 Natijalar eski, inson tasdiqlamagan yorliqlarga nisbatan diagnostikadir.
 Model giperparametrlari testga qarab sozlanmaydi.
+
+## Yangi skrinshot Excel fayllari (v1.1)
+
+`Skrinshot_izohlari_2026-11-07.xlsx` va `Skrinshot_izohlari_dataset.xlsx`
+uchun quyidagi qo‘shimcha import bor. Asl v1 bazasini saqlang va nusxasi bilan ishlang:
+
+```bash
+cp artifacts/v1/registry.sqlite artifacts/v1_1/registry.sqlite
+uzsarcasm ingest-screenshot-workbooks --db artifacts/v1_1/registry.sqlite \
+  --files new_input/Skrinshot_izohlari_2026-11-07.xlsx new_input/Skrinshot_izohlari_dataset.xlsx \
+  --output artifacts/v1_1/screenshot_addition
+```
+
+`artifacts/v1_1/` katalogini oldin yarating. Dastlabki 10 fayl va yangi skrinshot
+workbooklarini alohida input kataloglarida saqlang; yangi workbooks maxsus importer
+bilan o‘qiladi. Import natijalari: 124 izoh, jumladan 41 kinoya/sarkazm,
+59 kinoyasiz va 24 noaniq. Ikki faylning asosiy varaqlari o‘zaro takrorlanmaydi;
+bitta qisqa «Маладес» matni eski reyestrda bor. Qo‘shimcha yangi noyob matnlar 123.
+
+`Kinoya va sarkazm` varaqlari filtrlangan nusxalar: asl qatorlarga havolasi
+saqlanadi, qo‘shimcha izoh yoki yangi annotator ovozi sifatida hisoblanmaydi.
+`noaniq` binary `NULL`, kinoya/sarkazm `1`, kinoyasiz `0` nomzod sifatida saqlanadi.
+Hech biri mustaqil ikki inson tasdig‘isiz human-gold maqomini olmaydi.
+
+Post guruhi kodi workbook doirasida nomlanadi: turli fayllarning P1/T1 kabi
+kodlari avtomatik bitta global post deb qabul qilinmaydi. Yangi misollar eski
+YouTube bo‘linishlarini o‘zgartirmaydi; yangi IG misollari manba rasmi va mustaqil
+annotatsiya tekshirilguncha quarantine. Hozir taqdim etilgan Excel fayllarida
+rasmning o‘zi yo‘q. Kontekst matni annotator yozgan xulosa sifatida belgilangan.
+
+Ikkinchi annotator uchun `screenshot_second_review_blind.csv` yaratiladi;
+oldingi sinf va uning izohi ko‘rsatilmaydi. Oldingi bitta annotatorning kimligi
+hamda inson ekanligi tasdiqlanmasdan bu faylni import qilishning o‘zi konsensus
+hosil qilmaydi.

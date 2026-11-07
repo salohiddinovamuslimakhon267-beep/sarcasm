@@ -16,6 +16,7 @@ def main():
     r=commands.add_parser('import-reviews');r.add_argument('--db',required=True);r.add_argument('--csv',required=True);r.add_argument('--output',required=True)
     sh=commands.add_parser('ingest-screenshots');sh.add_argument('--db',required=True);sh.add_argument('--csv',required=True);sh.add_argument('--images',required=True);sh.add_argument('--output',required=True)
     ba=commands.add_parser('annotation-batches');ba.add_argument('--db',required=True);ba.add_argument('--output',required=True)
+    sw=commands.add_parser('ingest-screenshot-workbooks');sw.add_argument('--db',required=True);sw.add_argument('--files',nargs='+',required=True);sw.add_argument('--output',required=True)
     args=parser.parse_args()
     if args.command=='build':result=prepare(build(args.input,args.output),args.output)
     elif args.command=='validate':result=validate(args.db)
@@ -25,6 +26,9 @@ def main():
     elif args.command=='fetch-titles':
         from .context import fetch_titles
         result=fetch_titles(args.db,args.output,args.limit)
+    elif args.command=='ingest-screenshot-workbooks':
+        from .screenshot_workbooks import ingest_workbooks
+        result=ingest_workbooks(args.db,args.files,args.output)
     elif args.command=='annotation-batches':
         from .batches import create_batches
         result=create_batches(args.db,args.output)
