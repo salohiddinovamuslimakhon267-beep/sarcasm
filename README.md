@@ -1,5 +1,8 @@
 # O‘zbekcha kinoya va sarkazm: dataset tayyorlash
 
+**Tayyor datasetni yuklab olish:** [v1.1 Release sahifasi](https://github.com/salohiddinovamuslimakhon267-beep/sarcasm/releases/tag/dataset-v1.1).
+[Download fayllari](downloads/README.md) ichida to‘liq arxiv, yangi skrinshot Excel jadvali va annotatsiya blankalari bor.
+
 Bu repozitoriy korpusni tekshiriladigan, manbasi saqlanadigan shaklga keltiradi.
 **Hozirgi eski yorliqlar inson tomonidan mustaqil tasdiqlangan gold dataset emas.**
 Modelga o‘tishdan oldin ikki mustaqil inson annotatsiyasi va kelishmovchiliklarni
